@@ -5,7 +5,7 @@ const BASE_URL = "https://goodreads.com";
 
 const app = new Hono();
 
-app.get("/", (c) => c.text("Go to /:id, and replace :id with your Goodreads id."));
+app.get("/", (c) => c.json({ message: "Go to /:id, and replace :id with your Goodreads id.", example: "<domain>/74091755" }));
 
 app.get("/:id", async (c) => {
 	const id = c.req.param("id");
